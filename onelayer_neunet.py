@@ -20,7 +20,7 @@ class onelayer_neunet():
 			#Stocking errors in memory to plot convergence
 			self.Errors.append(np.max(error))
 			#Adjust synaptic weights
-			adjustments = np.dot(training_inputs.T, error * self.sigmoid_derivative(output))
+			adjustments = np.dot(2*training_inputs.T, error * self.sigmoid_derivative(output))
 			self.synaptic_weights += adjustments
 	
 	#Passes inputs through the neural network to get output
