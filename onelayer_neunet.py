@@ -1,6 +1,6 @@
 import numpy as np
 
-class NeuralNetwork():
+class onelayer_neunet():
 	def __init__(self):
 		np.random.seed(1)
 	def sigmoid(self,x): #sigmoid function of vector x 
@@ -28,7 +28,7 @@ class NeuralNetwork():
 
 if __name__ ==  "__main__":
 	# Initialize the single neuron neural network
-	neural_network=NeuralNetwork()
+	neural_network=onelayer_neunet()
 	neural_network.synaptic_weights = 2 * np.random.random((3,1)) - 1
 	print("Random synaptic weights: ")
 	print(neural_network.synaptic_weights)
