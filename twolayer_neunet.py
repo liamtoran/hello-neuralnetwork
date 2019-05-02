@@ -9,10 +9,10 @@ def sigmoid_derivative(x):
 	
 class NeuralNetwork():
 	def __init__(self,x,y):
-		self.input = x
+		self.input = x #training data input
 		self.weights1   = np.random.rand(self.input.shape[1],4) 
 		self.weights2 = np.random.rand(4,1)
-		self.y = y
+		self.y = y #training data output 
 		self.output = np.zeros(self.y.shape)
 		
 	def feedforward(self):
