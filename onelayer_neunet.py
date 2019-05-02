@@ -1,8 +1,10 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 class onelayer_neunet():
 	def __init__(self):
 		np.random.seed(1)
+		self.Errors = []
 	def sigmoid(self,x): #sigmoid function of vector x 
 		return 1/(1+np.exp(-x))
 		
@@ -15,6 +17,8 @@ class onelayer_neunet():
 			output = self.think(training_inputs)
 			#Calculate error
 			error = training_outputs - output
+			#Stocking errors in memory to plot convergence
+			self.Errors.append(np.max(error))
 			#Adjust synaptic weights
 			adjustments = np.dot(training_inputs.T, error * self.sigmoid_derivative(output))
 			self.synaptic_weights += adjustments
@@ -38,7 +42,7 @@ if __name__ ==  "__main__":
 	training_outputs = np.array([[0,1,1,0]]).T
 	
 	#Train the neural network
-	neural_network.train(training_inputs,training_outputs,10000)
+	neural_network.train(training_inputs,training_outputs,1000)
 	print("Synaptic weights after training: ")
 	print(neural_network.synaptic_weights)
 	A  = str(input("1:"))
@@ -47,3 +51,5 @@ if __name__ ==  "__main__":
 	print("New situation: input data =",A,B,C)
 	print("Output data: ")
 	print(neural_network.think(np.array([A,B,C])))
+	plt.plot(neural_network.Errors)
+	plt.show()
