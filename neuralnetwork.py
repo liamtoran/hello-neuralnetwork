@@ -76,6 +76,11 @@ class NeuralNetwork():
 	
 	def output(self,x):
 		return self.feedforward(x)[1][-1]
+	
+	def draw(self):
+		import VisualizeNN as VisNN
+		network=VisNN.DrawNN([self.input_size]+self.layers_size+[self.output_size])
+		network.draw()
 		
 		
 		
