@@ -46,6 +46,8 @@ class NeuralNetwork():
 
 
 	#Training of the model by adjusting synaptic weight via backpropagation	
+	
+	#Returns gradient of cost function (LSE)
 	def backpropagate(self, z_s, a_s): 
 		# y = training output, a_s =  neural activation of front propagation 
 		#
@@ -66,21 +68,34 @@ class NeuralNetwork():
 		return (db,dw)
 			
 
-	
-	def train(self,lr = 1):
+	#Gradient descent
+	def adjust(self, lr = 1):
 		#Pass training set through neural network
 		z_s, a_s = self.feedforward(self.training_inputs)
 		db, dw = self.backpropagate(z_s,a_s)
+		#Adjusts weights and biases
 		self.weights = [w+lr*dweight for w,dweight in zip(self.weights, dw)]
 		self.biases = [b+lr*dbias for b,dbias in zip(self.biases, db)]
 	
+	#Multiple ajustments
+	def train(self, epochs, lr=1):
+		for i in range(epochs):
+			self.adjust(lr)
+	
+	#Output layer of front propagation
 	def output(self,x):
 		return self.feedforward(x)[1][-1]
 	
-	def draw(self):
+	#Returns cost function / error of training inputs compared to training outputs	
+	def training_error(self):
+		np.average((self.training_outputs-self.output(self.training_inputs)**2))
+	
+	#Draws the neural network
+	def draw(self,coloring = .1):
 		import VisualizeNN as VisNN
-		network=VisNN.DrawNN([self.input_size]+self.layers_size+[self.output_size],[w/10 for w in self.weights])
+		network=VisNN.DrawNN([self.input_size]+self.layers_size+[self.output_size],[w*coloring for w in self.weights])
 		network.draw()
+	
 		
 		
 		
@@ -91,8 +106,7 @@ if __name__ == "__main__":
 	y = np.array([[0,0],[1,0],[1,1],[0,0],[1,1]])
 	layers = np.array([3,2])
 	nn= NeuralNetwork(x,y,layers)
-	for i in range(10000):
-		nn.train()
-	print(nn.feedforward(x)[1][-1])
+	nn.train(10000)
+	print(nn.training_error)
 	#print(nn.train())
 	#print(nn.errors)
