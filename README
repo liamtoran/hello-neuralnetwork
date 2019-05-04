@@ -1,5 +1,9 @@
-This is my first tackling of neural networks
+TO DO NEXT :
+- Unsupervised learning
+- Reinforement learning
 
-TO DO :
-- n layer neural-network
-- ...
+Done :
+- fast perecptron with back propagation 
+- class perceptron with back propagation 
+- 2 layer neural network with back propagation 
+- n arbitrary layers neural network with back propagation 
