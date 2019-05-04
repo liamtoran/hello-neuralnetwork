@@ -73,6 +73,9 @@ class NeuralNetwork():
 		db, dw = self.backpropagate(z_s,a_s)
 		self.weights = [w+lr*dweight for w,dweight in zip(self.weights, dw)]
 		self.biases = [b+lr*dbias for b,dbias in zip(self.biases, db)]
+	
+	def output(self,x):
+		return self.feedforward(x)[1][-1]
 		
 		
 		
