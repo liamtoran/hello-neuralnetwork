@@ -79,7 +79,7 @@ class NeuralNetwork():
 	
 	def draw(self):
 		import VisualizeNN as VisNN
-		network=VisNN.DrawNN([self.input_size]+self.layers_size+[self.output_size])
+		network=VisNN.DrawNN([self.input_size]+self.layers_size+[self.output_size],[w/10 for w in self.weights])
 		network.draw()
 		
 		
