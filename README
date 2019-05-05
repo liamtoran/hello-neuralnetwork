@@ -6,7 +6,7 @@ TO DO NEXT :
 Done :
 
 - Minibatch stochastic gradient descent
-- Q learning on OpenAI's FrozenIce
+- Q learning on OpenAI's FrozenLake
 - Tensorflow usage exemple
 - OpenAI Gym setup
 - n arbitrary layers neural network with back propagation 
