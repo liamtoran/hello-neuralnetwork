@@ -1,8 +1,12 @@
 TO DO NEXT :
 - Unsupervised learning
-- Reinforement learning
+- Selection learning
+- Deep Q Learning
 
 Done :
+
+- Minibatch stochastic gradient descent
+- Q learning on OpenAI's FrozenIce
 - Tensorflow usage exemple
 - OpenAI Gym setup
 - n arbitrary layers neural network with back propagation 
