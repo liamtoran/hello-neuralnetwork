@@ -1,7 +1,11 @@
 TO DO NEXT :
 - Unsupervised learning
-- Selection learning
-- Deep Q Learning
+- Natural Selection learning
+
+
+DOING : Deep Q learning
+Need to update NeuralNetwork().training_batch_size when changing/adding inputs
+
 
 Done :
 
