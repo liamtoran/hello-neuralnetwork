@@ -1,14 +1,15 @@
 TO DO NEXT :
+- Follow a full class ?
+- Cross entropy
+- Convolutional neural networks
 - Unsupervised learning
 - Natural Selection learning
 
 
-DOING : Deep Q learning
-Need to update NeuralNetwork().training_batch_size when changing/adding inputs
-
 
 Done :
 
+- Deep Q Learning using Keras on OpenAI Gym
 - Minibatch stochastic gradient descent
 - Q learning on OpenAI's FrozenLake
 - Tensorflow usage exemple
