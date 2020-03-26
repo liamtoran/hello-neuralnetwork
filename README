@@ -1,5 +1,5 @@
-These all "by hand" implementations of neural networks in Python,
-I didn't want to use keras or tensorflow for this because I wanted to undererstand more the maths behind NN.
+These are all "hand made" implementations of neural networks in Python,
+I didn't want to use keras / tensorflow / pytorch for this because I wanted to undererstand more the maths behind NN.
 
 TO DO NEXT :
 - Follow a full class ?
